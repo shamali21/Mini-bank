@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { CSSTransition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 
 import Backdrop from './Backdrop';
 import './Modal.css';
@@ -38,8 +38,8 @@ const Modal = props => {
         unmountOnExit
         timeout={200}
         classNames="modal"
-      >
-        <ModalOverlay {...props} />
+      > */}
+        {/* <ModalOverlay {...props} />
       </CSSTransition> */}
     </React.Fragment>
   );

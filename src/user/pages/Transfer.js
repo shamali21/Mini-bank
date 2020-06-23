@@ -10,6 +10,7 @@ import {
   import { useForm } from '../../shared/hooks/form-hook';
   import { useHttpClient } from '../../shared/hooks/http-hook';
   import ErrorModal from '../../shared/components/UIElements/ErrorModal';
+  import '../../admin/pages/PlaceForm.css'
   
 const Transfer = () => {
 

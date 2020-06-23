@@ -10,6 +10,8 @@ import Button from '../../shared/components/FormElements/Button';
 import { useForm } from '../../shared/hooks/form-hook';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal';
+import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
+import './PlaceForm.css';
 
 
 const WithdrawDeposit = () => {
@@ -52,6 +54,7 @@ const WithdrawDeposit = () => {
     <React.Fragment>
           <ErrorModal error={error} onClear={clearError} />
       <form className="place-form" onSubmit={transactionSubmitHandler}>
+      {isLoading && <LoadingSpinner asOverlay />}
         <Input
           id="amount"
           element="input"
@@ -71,7 +74,7 @@ const WithdrawDeposit = () => {
         />
         <Input
           id="type"
-          element="textarea"
+          element="input"
           label="Credit-Debit"
           validators={[VALIDATOR_REQUIRE()]}
           errorText="Please enter a valid type."

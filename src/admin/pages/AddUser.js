@@ -10,6 +10,7 @@ import Button from '../../shared/components/FormElements/Button';
 import { useForm } from '../../shared/hooks/form-hook';
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal';
+import './PlaceForm.css';
 
 
 const AddUser = () => {
@@ -45,6 +46,7 @@ const AddUser = () => {
         JSON.stringify({
           username: formState.inputs.username.value,
           account: formState.inputs.account.value,
+          password: formState.inputs.password.value,
           balance: formState.inputs.balance.value,
           type: formState.inputs.type.value,
         }),
@@ -74,9 +76,17 @@ const AddUser = () => {
           errorText="Please enter a valid account # (at least 10 digit)."
           onInput={inputHandler}
         />
+         <Input
+          id="password"
+          element="input"
+          label="Password"
+          validators={[VALIDATOR_MINLENGTH(8)]}
+          errorText="Please enter a valid password (at least 8 digit)."
+          onInput={inputHandler}
+        />
         <Input
           id="balance"
-          element="textarea"
+          element="input"
           label="Initial balance"
           validators={[VALIDATOR_REQUIRE()]}
           errorText="Please enter a valid amount."
@@ -84,7 +94,7 @@ const AddUser = () => {
         />
          <Input
           id="type"
-          element="textarea"
+          element="input"
           label="Admin/User"
           validators={[VALIDATOR_REQUIRE()]}
           errorText="Please enter a valid input"

@@ -10,7 +10,7 @@ import Transaction from './user/pages/Transaction'
 import Transfer from './user/pages/Transfer'
 import Uhome from './user/pages/Home'
 import AddUser from './admin/pages/AddUser';
-import Auth from './shared/components/Auth';
+import Auth from './shared/Auth/Auth';
 
 
 const App = () => {
@@ -99,6 +99,7 @@ const App = () => {
         <Route path='/user/home' exact={true} > <Uhome /></Route>
         <Route path='/user/transactions' exact={true} > <Transaction /></Route>
         <Route path='/user/transfer' exact={true} > <Transfer /></Route>
+        <Route path='/login' exact={true} > <Auth /></Route>
         <Redirect to='/' />
       </Switch>
     </Router>

@@ -29,6 +29,10 @@ const AddUser = () => {
         value: '',
         isValid: false
       },
+      password: {
+        value: '',
+        isValid: false
+      },
       type: {
         value: '',
         isValid: false

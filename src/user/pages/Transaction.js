@@ -11,12 +11,12 @@ const Transcation = () => {
     //     }
     //     console.log(newTransaction)
     // }
-    const {account}= "1534654753423"
+    const account= "1534654753423"
     const [transaction,setTranx] = useState([]);
   
     useEffect(() => {
         const fetchData = async () => {
-          const url = await axios('http://localhost:9000/user/transactions/1534654753423');
+          const url = await axios('http://localhost:9000/user/transactions/'+ account);
     console.log(url)
           setTranx(url.data);
         };

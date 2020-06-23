@@ -7,8 +7,8 @@ const Home =() =>{
 
   useEffect(() => {
       const fetchData = async () => {
-        const url = await axios('http://localhost:9000/user/home/Sahil');
-  console.log(url)
+        const url = await axios('http://localhost:9000/user/home/' + username);
+  console.log(username)
         setUser(url.data);
       };
   
